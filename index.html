@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model X | Tesla</title>
+
+    <meta name="description" content="Model X is built from the ground up as an electric vehicle, with a high-strength architecture and floor-mounted battery pack that enable exceptional occupant ...">
+    <link rel="icon" type="image/x-icon" href="tesla-favicon.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+            span.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  button.navbar-toggler {
+    border: none;
+  }
+        .body1{
+            background-color: rgb(0, 0, 0);
+
+        }
+        .body2{
+          background-color: #00000042;
+        }
+        .body3{
+          background-color: #ffffff;
+        }
+        .navbar {
+          background-color: rgba(0, 0, 0, 0.066);
+backdrop-filter: blur( 5px);
+      color: white;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    } 
+        .atag{
+            color: white;
+            transition: all 0.2s;
+            font-size: larger;
+        }
+        .atag:hover{
+
+color: gray;
+        }
+    .atagf{
+      transition: all 0.2s;
+      font-size: larger;
+    }
+    .atagf:hover{
+    color: gray;
+    }
+        .text{
+            color: white;
+            
+        }
+      
+        .buttonn{
+          border: 2px solid white;
+border-radius: 10px;
+font-weight: 500;
+transition: all 0.3s;
+        }
+        .buttonn:hover{
+          background-color: rgb(194, 194, 194);
+          border: 2px solid rgb(194, 194, 194);
+        }
+        .buttonn1{
+          border-radius: 10px;
+          border: 2px solid white;
+          background: transparent;
+          color: white;
+          font-weight: 500;
+          transition: all 0.3s;
+        }
+        .buttonn1:hover{
+          
+
+          background-color: white;
+          color: black;
+        }
+        .buttonn2{
+          border-radius: 5px;
+          border: 2px solid white;
+          background: transparent;
+          color: white;
+          font-weight: 500;
+          transition: all 0.3s;
+          width: 40%;
+        }
+        .buttonn2:hover{
+          
+
+          background-color: white;
+          color: black;
+        }
+      
+@media (min-width: 992px) {
+  .models{
+    margin-top: 45vh;
+  }
+  .text.row {
+    margin: 0px 300px; /* Add margin only for large screens */
+  }
+  .container.text-center .row {
+    margin: 0px 300px; 
+  }
+  .container.text-center .col button {
+    padding: 10px 100px; 
+  }
+}
+
+@media (max-width: 991px) {
+  .models{
+    padding-top: 35vh;
+  }
+  .text.row {
+    margin: 0; /* Reset margin for small screens */
+  }
+  .container.text-center .row {
+    margin: 0; 
+    flex-wrap: wrap; 
+  }
+  .container.text-center .col {
+    flex: 1 0 100%; 
+    margin-bottom: 10px; 
+  }
+  .container.text-center .col button {
+    width: 100%; 
+    padding: 10px 50px;
+  }
+}
+
+
+.col {
+            position: relative; /* Ensure relative positioning */
+        }
+
+        .selected-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px; /* Increased line height */
+            background-color: black;
+            z-index: 1; /* Ensure the line is above the content */
+        }
+
+        .inactive-section::before {
+            content: '';
+            
+            left: 0;
+            width: 100%;
+            height: 2px; /* Normal line height */
+            background-color: gray;
+            z-index: 1; /* Ensure the line is above the content */
+        }
+
+        .inactive-section h3, .inactive-section p {
+            color: rgba(0, 0, 0, 0.5); /* Text color with 0.5 opacity */
+        }
+        .active-button {
+          color: black;
+    background-color: white;
+  }
+  .inactive-button {
+    background-color: transparent;
+  }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand ms-4 " href="#"><img src="tesla logo.png" alt="Logo" width="132" >
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class=" nav-item pe-3">
+            <a class="nav-link atag" aria-current="page" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item pe-3">
+            <a class="nav-link atag" href="#powertrain">Powertrain</a>
+          </li>
+          <li class="nav-item pe-3">
+            <a class="nav-link atag" href="#range">Range</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link atag" href="#about">About</a>
+          </li>
+        
+        
+          
+        </ul>
+        <form class="d-flex " role="search">
+            <a class="me-3"  href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABw0lEQVR4nM2WOy8EURTHV7xrjy0UlqgURKUX1aLR+wYKje+wVhS0WI8YtWhJliAStdDgC4iClSxBfnJ2j2R2d3bn3jsj2X8yyeTmnPllzj2vRKLZBXQDc8Aq4AHn+nh6Ngt0xQkcAvaAd8IlNrviEwXYCawBn9jrQ6PQYQvtBc6IrisgaQpNAk/Ep0egPwzaHtOfVutSrq4RWO7URHfAJrAOnALfBj7ZetBhw0RaBlqrfCeAF4OESwWBpWTC5KntKHCs1zKvZwsG/jtBzcGkTqfV/t53JlHq0/ILC3mhosloRzLRLXAUcD4CtABFg2/M+MFS7K66UeikoX3WDz50hErCjCtY+jameVJShNpdUv9FC598mVp2zDtAT/RPxwzvNhDsEuop9b229POiJpeMyzbgx9JvxQ+WIW6rbWDDwS/tB0vxv/H/KtRsKbo52GhA5/arhU+uAqrglNalqUqDAng2tC8CgzVghyTbB7aAL0P7TCD0nxeBi9D9S9YUXVfi0oNMr4ZQH7zHsZsFrTxmy96fJDQySSwTzp9IGev11i/JRNkctAbDJL0gVzd7Ew6SwpchrlE40CSUR97lLN1wk2wW/QJr3qKjWWiA+QAAAABJRU5ErkJggg=="></a>
+            <a class="me-3" href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAADbklEQVR4nM3WW4hWVRQH8MkupmWX0crKJEXLCKLIyiDKoJsh2UNkmU8F9RDRRYjxxdKku92nsnroZnQxrCkoUYq0pwrKkqSQ0knKGoOMrnb5xcr1wZ7D+b75hgZswYFz9tl7/9de+7/+a3V0/N8NwzEDd+JZvI01eA5LcCFGDiXgEXgCP+IHvIx7cAOuw914Hn34JR2Z/F8A98St+BUrcU6M5b/dMRYHYa9i7PR0bAcexIjBgo7GW/gCZ0UIcS3OxGH4BPMwJ+dMxgnowv44FevxPg5vF7QTG/AOxmAmtuSp454/ttMawGG92A9PZ8jnYhR6cu24gUD3wGqsjRDiZvydm8eJ5ud7FTjsvuTDH/n9UO73Cj5oSTwswpd5d/vm9ya8m6f9tgVwEOtALMd2LM19RmWUHmkGGnf3M87H2ejG0RiWG0xK9ob3m3E1LsJXWJekOjHnhpPjcRcuwUlJuGPqgB/O3Byep27Yh9gHUzExHGnieACdnO+xz1+5vi8j8UI4V3e323ABLtfftuacjfn9J77DFTl/a55G5npE6KPKHvNxCn4PEpbA0zPMI5JYpb2BAwqSNbvjhh2FJytjn6dDX2N2CXwT3swcbLCyYY/j+BqAZsDn4paa8Yl4Kq60BH4Mj8Yd1Sy4LcnWLvDclNKqzcRCvFoCv5anDoJcWXkifyfUjB+XTK+OH5vZUB2fgqtCzUrgnl0FvDSfyLeq3Z563W6oL8P1TUK9KJSsBF4wxORaXDM+IcnVXQKfkek0cojSKQBK+6xIp4vrBGRWGwKyIzW7FJAQhlJAQkJL68I0/NZPQHLj7iyFVcn8t7IkyY7Ebi0kc1q+ryki1JcReymeuoWH4qckQaNITMpojM1i/2Jqd29RJLbkCZdnkRida8KRO0KpUi4jUlPqnO7I+huV55AsZ/fi+0GUxc504JvsxcbkPuv7kaoGODxdVQAtqDQCXQM0AuOLrHgg9+vJFqh1/5UlbEOy++Csz70DtD6bs/V5JivXpfn9etbrcS1BC/DObIE2ZV5G1bqmaPbWFcAbi2bvxgQ8DZ/ivZjfFmgl7Ivz7sKJ84pWdljR3pYt7/TssSK97sfegwItLcKU6rU9nxVJunlZhZZkqmxLEVoW2dAxVGZn1xlhD+2Ou4z2JvI+gKK3CjEZXAO/K+wfd6/DPHgJ8hQAAAAASUVORK5CYII="></a>
+            <a  class="me-4" href="login.html"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAACXUlEQVR4nM2WTUuUURTHJ3J6o5CEDBKygoxw5RdIxmal46ISdy0i3NQi0k9QtBAbcx+JBRVBuCsjE5SyQOgLTOGqlYG9oElF8ItTR+bpzj33Po+O0B8eeDj3nPO/99zzcnO5/x3ALqAE3ATuA3P6yf8I0CM69SQ8CtwDVoFPwCQwBgzpN6ayz8AKcBc4shnCncAo8AN4CpwG8gH9PFAEpoDvGpkdWUmbgXmgAnR61vcCJ4HDwDbPegF4D7wSX2lJDwKLwDSw3+PwJfCLKr5oyLc7uk3AjPpqThPeeSVtcNb6HUIXH4AuT/hf6MntsOudVjwnldAuEYck4CHPyd/JnVukxzSRfHfaTXpc8dgXNOFqs11L5omxKbnDtBgxfExJqbnC3RqmrjoQ3zJ8FLXOq00G6AWW3YRKrJ/PQHzV8JHXJtOTFEqxP/YZ6HpHBuLOgJ/Jf64CeAiUAwZ9GYjPRarmQVIwCwwGDC5nIL4U8DMkXEnBXIT4hJZDDKJzPOBnULiSgkdmgVd1BlIQD0R8lOVaXYGZXIl5/DFAuhSbx3iSq6Sz1ltOTtlZKEVs81pO3W4DWbMaSEKvIUAc23QR+FYTFWBCBn7EuDFA3BixfQaMW0PiJ3DKMGzXEWdBRmm7YVvQAdRq7aqsL4c/YxHYB1zQGZ0Wr4GLYpsYi4vAcCwB3gDPpedq/94olrVup/UhYL7X1slbdHDXCxX3cRAib8oYXgsLwIFUpE6J3dCkyAppndc39cDnb5++A3xNQSg6t4G2DRPmajewBzirJ5HW91Y/+b8GnJEo1Y1wq/Ab8LR96yJmwhMAAAAASUVORK5CYII="></a>
+          </form>
+      </div>
+    </div>
+  </nav>
+    <header class="body1">
+
+          <div id="carouselExampleIndicators" class="carousel slide carousel-fade">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <header style="background-image: url(teslamodelx.jpg);
+height: 100vh;
+width: 100%;
+                background-size: cover;            
+                background-position: center;">
+
+                    
+              
+                      <section style="padding-top: 96px;" class="text-center ">
+                        <h1 class="text" >Model X</h1>
+                        <h2 style="font-size: large;" class="text mt-3">From $68,590* </h2>
+                        <p class="text" style="font-size: small; line-height: 15px;">After Federal Tax Credit & Est. Gas Savings</p>
+                              <div class="models container">
+                                <div class="text row">
+                                  <div class="col-3 col-md-3">
+                                    <h2>326 mi</h2>
+                                    <p>Range (EPA est.)</p>
+                                  </div>
+                                
+                                  <div class="col-3 col-md-3">
+                                    <h2>2.5 s</h2>
+                                    <p>0-60 mph*</p>
+                                  </div>
+                                  <div class="col-3 col-md-3">
+                                    <h2>9.9 s</h2>
+                                    <p>1/4 mile</p>
+                                  </div>
+                                  <div class="col-3 col-md-3">
+                                    <h2>1,020</h2>
+                                    <p>Peak Power</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="container text-center">
+                                <div  class="row">
+            
+                                  <div class="col">
+                                    <button class="buttonn" >Order Now.</button> 
+                                  </div>
+                                  <div class="col">
+                                    <button class="buttonn1" >Demo Drive</button> 
+                                  </div>
+                                </div>
+                              </div>
+                              <br><br>
+                          
+                              
+                              
+                      </section>
+                      
+                </header>
+              </div>
+              <div class="carousel-item ">
+                <header style="background-image: url(teslamodels.jpg);
+height: 100vh;
+width: 100%;
+                background-size: cover;            
+                background-position: center;">
+<section style="padding-top: 96px;" class="text-center ">
+  <h1 class="text" >Model S</h1>
+  <h2 style="font-size: large;" class="text mt-3">From $71,090* </h2>
+  <p class="text" style="font-size: small; line-height: 15px;">After Est Gas Savings</p>
+        <div class="models container">
+          <div class="text row">
+            <div class="col-3 col-md-3">
+              <h2>359 mi</h2>
+              <p>Range (EPA est.)</p>
+            </div>
+          
+            <div class="col-3 col-md-3">
+              <h2>1.99 s</h2>
+              <p>0-60 mph*</p>
+            </div>
+            <div class="col-3 col-md-3">
+              <h2>200 mph</h2>
+              <p>Top Speed*</p>
+            </div>
+            <div class="col-3 col-md-3">
+              <h2>1,020</h2>
+              <p>Peak Power</p>
+            </div>
+          </div>
+        </div>
+        <div class="container text-center">
+          <div  class="row">
+
+            <div class="col">
+              <button class="buttonn" >Order Now.</button> 
+            </div>
+            <div class="col">
+              <button class="buttonn1" >Demo Drive</button> 
+            </div>
+          </div>
+        </div>
+        <br><br>
+    
+        
+        
+</section>
+                
+                  
+                      
+                </header>
+              </div>
+              <div class="carousel-item ">
+                <header style="background-image: url(teslamodel3.jpg);
+height: 100vh;
+width: 100%;
+                background-size: cover;            
+                background-position: center;">
+
+                      <section style="padding-top: 96px;" class="text-center ">
+                        <h1 class="text" >Model 3</h1>
+                        <h2 style="font-size: large;" class="text mt-3">Lease Starting at $329/mo </h2>
+                        <p class="text" style="font-size: small; line-height: 15px;">Reengineered</p>
+                              <div class="models container">
+                                <div class="text row">
+                                  <div class="col-3 col-md-3">
+                                    <h2>15 min</h2>
+                                    <p>up to 175 miles*</p>
+                                  </div>
+                                
+                                  <div class="col-3 col-md-3">
+                                    <h2>341 mi</h2>
+                                    <p>Range (EPA est.)</p>
+                                  </div>
+                                  <div class="col-3 col-md-3">
+                                    <h2>AWD</h2>
+                                    <p>Dual Motor</p>
+                                  </div>
+                                  <div class="col-3 col-md-3">
+                                    <h2>456</h2>
+                                    <p>Peak Power</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="container text-center">
+                                <div  class="row">
+            
+                                  <div class="col">
+                                    <button class="buttonn" >Order Now.</button> 
+                                  </div>
+                                  <div class="col">
+                                    <button class="buttonn1" >Demo Drive</button> 
+                                  </div>
+                                </div>
+                              </div>
+                              <br><br>
+                          
+                              
+                              
+                      </section>
+                      
+                </header>
+              </div>
+            
+              
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+
+
+        
+          
+    </header>
+  <main class="body1">
+<section  class="text-center">
+    <h2 class="pt-5 mb-5 text" data-aos="fade-up" data-aos-duration="1000" >Interior Of The Future</h2>
+    <img src="interior of the future.jpg" width="100%" title="Interior of Model X" alt="Interior of Model X">
+</section>
+<section id="gallery" style="margin-top: 96px;">
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      </div>
+        <div class="carousel-inner align">
+          <div class="carousel-item  active">
+            <video src="Model X Guide _ Key Fob.mp4" width="95%" muted autoplay class="ms-auto me-auto rounded-4 d-block" alt="Key Fob" title="Key Fob">
+          </div>
+          <div class="carousel-item  ">
+            <video src="Model S+X Guide _ Smart Air Suspension.mp4" width="95%" muted  autoplay class="ms-auto me-auto rounded-4 d-block" alt="Smart Air Suspension" title="Smart Air Suspension">
+          </div>
+          <div class="carousel-item  ">
+            <video src="Model S+X Guide _ Supercharging.mp4" width="95%" muted  autoplay class="ms-auto me-auto rounded-4 d-block" alt="Supercharging" title="Supercharging">
+          </div>
+          <div class="carousel-item  ">
+            <video src="Model S+X Guide _ Autopark.mp4" width="95%" muted autoplay class="ms-auto me-auto rounded-4 d-block" alt="AutoPark" title="AutoPark">
+          </div>
+          <div class="carousel-item  ">
+            <video src="Model X Guide _ Model X Doors.mp4" width="95%" muted autoplay class="ms-auto me-auto rounded-4 d-block" alt="Doors" title="Doors">
+          </div>
+        
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      
+    </section>
+    <section class="container" style="margin-top: 110px; ">
+        <div class=" ">
+            <div class="row align-items-center">
+              <div class="col-12 col-md-6">
+                <img data-aos="fade-down" src="MX-Interior-Grid-B-Desktop_LHD.jpg" width="100%" alt="interior-grid-b" title="interior-grid-b" >
+              </div>
+              <div class="col-12 col-md-6">
+                <p data-aos="fade-up" class="text"><strong>Stay Connected</strong><br>
+Instantly connect with multi-device Bluetooth, or fast charge devices with wireless and 36-watt USB-C charging.</p>
+              </div>
+              <div class="col-12 col-md-6">
+                <p data-aos="fade-up" class="text"><strong>Sublime Sound</strong><br>
+                    A 22-speaker, 960-watt audio system with Active Road Noise Reduction offers the best listening experience wherever you are.
+                  </p>
+                
+              </div>
+              <div class="col-12 col-md-6">
+                <img data-aos="fade-down" src="MX-Interior-Grid_C-Desktop.jpg" width="100%" alt="interior-grid-c" title="interior-grid-c">
+              </div>
+            
+            </div>
+          </div>
+    </section>
+  
+  
+  </main>
+  
+  <main class="body2">
+    <section id="powertrain">
+        <div class="container  ps-5">
+            <h2 data-aos="fade-up" data-aos-duration="1000" style="padding-top: 70px;">Electric Powertrain</h2>
+            <p data-aos="fade-up" data-aos-duration="1000" class="w-75">Model X platforms unite powertrain and battery technologies for an unrivaled combination of performance, range and efficiency. New module and pack thermal architecture allows for faster charging and gives you more power and endurance in all conditions.</p>
+        </div>
+        <img id="engineImg" class="ms-auto me-auto rounded-3 mt-5 d-block" src="engine1.png" width="90%" alt="chasis x" title="chasis x">
+        <div style="margin-top: 50px;" class="container">
+            <div class="row">
+                <div style="cursor: pointer;" class="col selected-section" onclick="changeImage('engine1.png'); highlightSection(this);">
+                    <h3 class="pt-3">Model X</h3>
+                    <p>Dual Motor All-Wheel Platform has the longest range, and now delivers insane power and acceleration.</p>
+                    <div class="d-flex text-center ">
+                        <div class="col-3  col-md-3">
+                            <h3 >3.8 s</h3>
+                            <p>0-60 mph</p>
+                        </div>
+
+                        <div class="col-3 col-md-3">
+                            <h3>335 mi</h3>
+                            <p>Range (EPA est.)</p>
+                        </div>
+                        <div class="col-3 col-md-3">
+                            <h3>660 hp</h3>
+                            <p>Peak Power</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="cursor: pointer;" class="col inactive-section" onclick="changeImage('engine2.png'); highlightSection(this);">
+                    <h3 class="pt-3 ">Model X Plaid</h3>
+                    <p>
+                      Tri Motor All-Wheel Drive platform with torque vectoring features three independent motors.
+                    </p>
+                    <div class="d-flex text-center ">
+                        <div class="col-3  col-md-3">
+                            <h3>2.5 s</h3>
+                            <p>0-60 mph</p>
+                        </div>
+
+                        <div class="col-3 col-md-3">
+                            <h3>326 mi</h3>
+                            <p>Range (EPA est.)</p>
+                        </div>
+                        <div class="col-3 col-md-3">
+                            <h3>1,020 hp</h3>
+                            <p>Peak Power</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p data-aos="fade-up" data-aos-duration="1000" class="text-center pt-5 pb-5">*With rollout subtracted</p>
+    </section>
+<section class="body1">
+  <img src="modelx exterior.jpg" width="100%" alt="modelx exterior" title="modelx exterior">
+    <div class="container" style="margin-top: 110px;">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-6">
+            <p data-aos="fade-up" class="text"><strong>Relentless Performance</strong><br>
+              Performance wheels and tires keep the SUV planted, transferring even more power down to the road.</p>
+            </div>
+            <div class="col-12 col-md-6">
+              <img data-aos="fade-up" src="Model-X-Exterior-Grid-A-Desktop-Mobile-Global_1.jpg" width="100%" alt="model-x-exterior-grid a" title="model-x-exterior-grid a">
+            </div>
+            <div class="col-12 col-md-6">
+              <img data-aos="fade-up" src="Model-X-Exterior-Grid-B-Desktop-Mobile-Global_1.jpg" width="100%" alt="model-x-exterior-grid b" title="model-x-exterior-grid b">
+            </div>
+          <div class="col-12 col-md-6">
+            <p data-aos="fade-up" class="text"><strong>Optimized Aerodynamics</strong><br>
+              Attention to detail on all exterior surfaces makes Model X the most aerodynamic production SUV on Earth.
+              </p>
+            
+          </div>
+        
+        
+          <div class="col-12 col-md-6">
+            <p data-aos="fade-up" class="text"><strong>Refined Styling</strong><br>
+              Exterior design combines an iconic look with elegant details.</p>
+          </div>
+          <div class="col-12 col-md-6">
+            <img data-aos="fade-up" src="Model-X-Exterior-Grid-C-Desktop_Mobile-LHD-_1_.jpg" width="100%" alt="model-x-exterior-grid c" title="model-x-exterior-grid c">
+          </div>
+        
+        </div>
+      </div>
+
+
+</section>
+
+<section style="padding-bottom: 70px;" >
+  <div id="range" class="container  ps-5">
+      <h2 data-aos="fade-up" data-aos-duration="1000" style="padding-top: 70px;">Freedom To Travel</h2>
+      <p data-aos="fade-up" data-aos-duration="1000" class="w-75">Enter a destination on your touchscreen, and Trip Planner will automatically calculate your route with Superchargers along the way. With a range of 326 miles, you can enjoy a seamless journey without worrying about running out of charge.
+      </p>
+  </div>
+  <div class="container ms-auto me-auto rounded-3 mt-5 "><div class="gmap_canvas"><iframe width="100%" height="500px" id="gmap_canvas" src="https://maps.google.com/maps?q=tucson%2C+Arizona%2C+Usa+to+El+Paso%2C+Texas%2C+USA&t=&z=7&ie=UTF8&iwloc=&output=embed" frameborder="0" title="Range" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://online.stopwatch-timer.net/">timer stopwatch</a><br><a href="https://textcaseconvert.com/"></a><br><style>.mapouter{position: relative;text-align: right;height: 500px;width: 100%;}</style><a href="https://www.embedmaps.co">generate Google Maps</a><style>.gmap_canvas{overflow: hidden;background: none !important;height: 500px;width: 100%;}</style></div></div>
+
+</section>
+<section id="about" class="text body1">
+  <div class="container">
+    <div class="row">
+      <div style="margin-top: auto; margin-bottom: auto;" class="col-12 col-md">
+        <img src="ModelX_9.jpg" width="100%" alt="model x front" title="model x front">
+      </div>
+      <div class="col-12 col-md mt-5 mb-5">
+        <h2><strong>Tesla Model X</strong> Specs</h2>
+        <div class="text mt-4 d-flex">
+          <button id="plaidButton" class="buttonn2 active-button" onclick="showModelPlaid()">Model X Plaid</button>&nbsp;
+          <button id="xButton" class="buttonn2 inactive-button" onclick="showModelX()">Model X</button>
+        </div>
+        <div style="display: flex;" id="modelPlaidSpecs">
+          <!-- Specifications for Model X Plaid -->
+          <div class="ms-2 mt-3">
+            _______
+            <h5 class="mt-1">Range (EPA est.)</h5>
+            <p style="line-height:10px;">360 mi</p>
+            _______
+            <h5 class="mt-1">1/4 Mile</h5>
+            <p style="line-height:10px;">9.3s</p>
+_______
+            <h5 class="mt-1">Peak Power</h5>
+            <p style="line-height:10px;">1,020 hp</p>
+_______
+            <h5 class="mt-1">Wheels</h5>
+            <p style="line-height:10px;">20" or 22"</p>
+_______
+            <h5 class="mt-1">Towing</h5>
+            <p style="line-height:10px;">5,000 lbs</p>
+_______
+            <h5 class="mt-1">Seating</h5>
+            <p style="line-height:10px;">Up to 7</p>
+
+            
+          </div>
+          <div style="margin-left:107px" class="mt-3">
+_______
+            <h5 class="mt-1">*Acceleration</h5>
+            <p style="line-height:10px;">2.5s 0-60 mph</p>
+_______
+            <h5 class="mt-1">Top Speed</h5>
+            <p style="line-height:10px;">163 mph</p>
+_______
+            <h5 class="mt-1">Drag Coefficient</h5>
+            <p style="line-height:10px;">0.24 Cd</p>
+_______
+            <h5 class="mt-1">Powertrain</h5>
+            <p style="line-height:10px;">Tri Motor</p>
+_______
+            <h5 class="mt-1">Supercharging Max</h5>
+            <p style="line-height:10px;">250 kW</p>
+            _______
+            <h5 class="mt-1">Warranty</h5>
+            <p style="line-height:10px;">Basic Vehicle - 4 years or 50,000 miles,</p>
+          </div>
+        </div>
+        <div  id="modelXSpecs" style="display: none;">
+          <!-- Specifications for Model X -->
+          <div class="ms-2 mt-3">
+_______
+            <h5 class="mt-1">Range (EPA est.)</h5>
+            <p style="line-height:10px;">335 mi</p>
+_______
+            <h5 class="mt-1">Peak Power</h5>
+            <p style="line-height:10px;">670 hp</p>
+_______
+            <h5 class="mt-1">Wheels</h5>
+            <p style="line-height:10px;">20" or 22"</p>
+_______
+            <h5 class="mt-1">Towing</h5>
+            <p style="line-height:10px;">5,000 lbs</p>
+            _______
+            <h5 class="mt-1">Seating</h5>
+            <p style="line-height:10px;">Up to 7</p>
+            _______
+            <h5 class="mt-1">Weight</h5>
+            <p style="line-height:10px;">5,148 lbs</p>
+          </div>
+          <div style="margin-left:107px" class="mt-3">
+_______
+            <h5 class="mt-1">*Acceleration</h5>
+            <p style="line-height:10px;">3.8s 0-60 mph</p>
+_______
+            <h5 class="mt-1">Top Speed</h5>
+            <p style="line-height:10px;">155 mph</p>
+            _______
+            <h5 class="mt-1">Drag Coefficient</h5>
+            <p style="line-height:10px;">0.24 Cd</p>
+_______
+            <h5 class="mt-1">Powertrain</h5>
+            <p style="line-height:10px;">Dual Motor</p>
+_______
+            <h5 class="mt-1">Supercharging Max</h5>
+            <p style="line-height:10px;">250 kW</p>
+            _______
+            <h5 class="mt-1">Warranty</h5>
+            <p style="line-height:10px;">Basic Vehicle - 4 years or 50,000 miles,</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer style="margin-top: 120px;" class="text-center">
+  <p style="padding-left: 0; margin: 0 auto; width: 50%; text-align: center;">
+      Certain high data usage vehicle features require at least Standard Connectivity, including maps, navigation, and voice commands. Access to features that use cellular data and third-party licenses are subject to change. <u>
+      Learn more about Standard Connectivity and any limitations.
+      </u>
+  </p>
+  <hr style="margin-top: 3;">
+  <ul class="mb-3" style="display: flex; justify-content: center; gap: 0px; padding: 0; margin-top: 30px;">
+<a class="nav-link atagf pe-4" href="#gallery">Gallery</a>
+<a class="nav-link atagf pe-4" href="#powertrain">Powertrain</a>
+<a class="nav-link atagf pe-4" href="#range">Range</a>
+<a class="nav-link atagf pe-4" href="#about">About</a>
+
+</ul>
+  
+  
+
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+      AOS.init();
+  
+      function changeImage(imageSrc) {
+          document.getElementById('engineImg').src = imageSrc;
+      }
+  
+      function highlightSection(section) {
+          // Remove the class from all sections
+          var sections = document.querySelectorAll('.col');
+          sections.forEach(function(sec) {
+              sec.classList.remove('selected-section');
+              sec.classList.add('inactive-section');
+          });
+          // Add the class to the selected section
+          section.classList.remove('inactive-section');
+          section.classList.add('selected-section');
+      }
+      function showModelPlaid() {
+    document.getElementById("modelPlaidSpecs").style.display = "flex";
+    document.getElementById("modelXSpecs").style.display = "none";
+    document.getElementById("plaidButton").classList.add("active-button");
+    document.getElementById("plaidButton").classList.remove("inactive-button");
+    document.getElementById("xButton").classList.remove("active-button");
+    document.getElementById("xButton").classList.add("inactive-button");
+  }
+
+  function showModelX() {
+    document.getElementById("modelPlaidSpecs").style.display = "none";
+    document.getElementById("modelXSpecs").style.display = "flex";
+    document.getElementById("plaidButton").classList.remove("active-button");
+    document.getElementById("plaidButton").classList.add("inactive-button");
+    document.getElementById("xButton").classList.add("active-button");
+    document.getElementById("xButton").classList.remove("inactive-button");
+  }
+  </script>
+</body>
+</html>
